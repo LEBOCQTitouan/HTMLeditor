@@ -26,6 +26,7 @@ public class HtmlEditorController {
     @FXML
     VBox noFileOpenedDialogue;
     /* end FXML */
+    HtmlEditorTab currentFocus;
 
     public void createFileAction(Event event) {
         event.consume();
@@ -52,12 +53,16 @@ public class HtmlEditorController {
     }
 
     public void createHtmlEditorTab() {
-        HtmlEditorTab test = new HtmlEditorTab();
-        System.out.println(test);
+        try {
+            HtmlEditorTab test = new HtmlEditorTab();
+            System.out.println(test);
 
-        contentTabPane.getTabs().add(test);
-        contentTabPane.setManaged(true);
-        noFileOpenedDialogue.setVisible(false);
+            contentTabPane.getTabs().add(test);
+            contentTabPane.setManaged(true);
+            noFileOpenedDialogue.setVisible(false);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     public void initialize() {
