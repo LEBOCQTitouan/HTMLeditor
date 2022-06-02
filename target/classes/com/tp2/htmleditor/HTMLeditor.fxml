@@ -41,22 +41,30 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1041.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tp2.htmleditor.HtmlEditorController">
    <children>
       <MenuBar fx:id="HTMLeditorMain">
         <menus>
           <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
+               <items>
+                  <MenuItem mnemonicParsing="false" text="New" />
+                  <MenuItem mnemonicParsing="false" text="Open" />
+                  <MenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Save as" />
+                  <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" text="Quit" />
+               </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" text="Copier" />
+                  <MenuItem mnemonicParsing="false" text="Couper" />
+                  <MenuItem mnemonicParsing="false" text="Coller" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -68,10 +76,38 @@
       </MenuBar>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
-          <Button fx:id="newFile" mnemonicParsing="false" text="New" />
-            <Button fx:id="openFile" mnemonicParsing="false" text="Open" />
-            <Button mnemonicParsing="false" text="Save" />
-            <Button mnemonicParsing="false" text="Save as" />
+          <Button fx:id="newFile" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@iconmonstr-text-28-240.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="openFile" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@iconmonstr-download-20-240.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="saveFile" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@iconmonstr-save-14-240.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="saveAsFile" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@iconmonstr-saveas-1-240.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
         </items>
       </ToolBar>
       <AnchorPane fx:id="content" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
